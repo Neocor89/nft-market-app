@@ -27,9 +27,10 @@ const Home = ({ collections }: Props) => {
         <main className="bg-slate-100 p-6 lg:p-10 shadow-xl shadow-rose-300/20">
           <div className="grid space-x-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {collections.map(collection => (
-              <Link href={`/nft/${collection.slug.current}`}>
+              <Link key={collection._id} href={`/nft/${collection.slug.current}`}>
               <div className="flex flex-col cursor-pointer items-center transition-all duration-200 hover:scale-105">
-                <img 
+                <img
+                  key={collection._id} 
                   className="h-50 lg:h-56 w-80 rounded-2xl object-cover mb-2" 
                   src={urlFor(collection.mainImage).url()} 
                   alt="BENDEVWEB image collection" />
